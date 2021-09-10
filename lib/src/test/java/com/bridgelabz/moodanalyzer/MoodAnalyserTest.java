@@ -20,8 +20,8 @@ public class MoodAnalyserTest {
 	}
 	
 	@Test
-	public void givenMessage_WhenNoParameter_ShouldReturnHappy() {
-		MoodAnalyser moodAnalyser = new MoodAnalyser();
+	public void givenMessage_WhenNull_ShouldReturnHappy() {
+		MoodAnalyser moodAnalyser = new MoodAnalyser(null);
 		String mood = moodAnalyser.analyseMood();
 		Assert.assertEquals("HAPPY", mood);
 	}
