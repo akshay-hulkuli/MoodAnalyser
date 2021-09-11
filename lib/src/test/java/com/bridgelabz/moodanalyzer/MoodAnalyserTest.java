@@ -36,9 +36,10 @@ public class MoodAnalyserTest {
 	public void givenMessage_WhenNull_ShouldReturnHappy() {
 		MoodAnalyser moodAnalyser = new MoodAnalyser(null);
 		try {
+			ExpectedException exceptionRule = ExpectedException.none();
+			exceptionRule.expect(MoodAnalysisException.class);
 			moodAnalyser.analyseMood();
 		} catch (MoodAnalysisException e) {
-			Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_NULL, e.type);
 			System.out.println(e.getMessage());
 		}
 	}
@@ -47,9 +48,10 @@ public class MoodAnalyserTest {
 	public void givenMessage_WhenEmpty_ShouldReturnHappy() {
 		MoodAnalyser moodAnalyser = new MoodAnalyser("");
 		try {
+			ExpectedException exceptionRule = ExpectedException.none();
+			exceptionRule.expect(MoodAnalysisException.class);
 			moodAnalyser.analyseMood();
 		} catch (MoodAnalysisException e) {
-			Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_EMPTY, e.type);
 			System.out.println(e.getMessage());
 		}
 	}
